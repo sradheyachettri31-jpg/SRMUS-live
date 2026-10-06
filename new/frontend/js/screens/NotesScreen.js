@@ -4,10 +4,19 @@
  */
 
 export class NotesScreen {
-  constructor({ notes = [], onNavigate, onDownload }) {
+  constructor({ notes = [], onNavigate, onBack, onDownload }) {
     this.notes = notes;
     this.onNavigate = onNavigate;
+    this.onBack = onBack;
     this.onDownload = onDownload;
+  }
+
+  handleBack() {
+    if (this.onBack) {
+      this.onBack();
+    } else if (this.onNavigate) {
+      this.onNavigate('home');
+    }
   }
 
   render() {
@@ -23,7 +32,7 @@ export class NotesScreen {
               <span>SRMUS Live</span>
             </div>
           </div>
-          <button class="btn-back" id="btn-notes-home" title="Back to Home">
+          <button class="btn-back" id="btn-notes-home" title="Go Back">
             <i data-lucide="arrow-left" style="width: 13px; height: 13px;"></i>
             <span>Back</span>
           </button>
@@ -65,8 +74,8 @@ export class NotesScreen {
     const brandLink = container.querySelector('#brand-notes-home');
     const downloadBtns = container.querySelectorAll('.btn-download-note');
 
-    if (homeBtn && this.onNavigate) homeBtn.addEventListener('click', () => this.onNavigate('home'));
-    if (brandLink && this.onNavigate) brandLink.addEventListener('click', () => this.onNavigate('home'));
+    if (homeBtn) homeBtn.addEventListener('click', () => this.handleBack());
+    if (brandLink) brandLink.addEventListener('click', () => this.handleBack());
 
     downloadBtns.forEach(btn => {
       btn.addEventListener('click', () => {

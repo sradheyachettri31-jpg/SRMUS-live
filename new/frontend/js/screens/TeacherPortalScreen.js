@@ -4,7 +4,7 @@
  */
 
 export class TeacherPortalScreen {
-  constructor({ faculty, onSignOut, onNavigate }) {
+  constructor({ faculty, onSignOut, onNavigate, onBack }) {
     this.faculty = faculty || {
       name: 'Dr. K. Senthil Kumar',
       designation: 'BCA Class Advisor & Assistant Professor',
@@ -12,6 +12,15 @@ export class TeacherPortalScreen {
     };
     this.onSignOut = onSignOut;
     this.onNavigate = onNavigate;
+    this.onBack = onBack;
+  }
+
+  handleBack() {
+    if (this.onBack) {
+      this.onBack();
+    } else if (this.onNavigate) {
+      this.onNavigate('gateway');
+    }
   }
 
   render() {
@@ -30,7 +39,7 @@ export class TeacherPortalScreen {
               <span class="brand-live-tag" style="background: #e2e8f0; color: #334155; border-color: #cbd5e1;">Faculty</span>
             </div>
           </div>
-          <button class="btn-back" id="btn-fac-back" title="Back to Gateway">
+          <button class="btn-back" id="btn-fac-back" title="Go Back">
             <i data-lucide="arrow-left" style="width: 13px; height: 13px;"></i>
             <span>Back</span>
           </button>
@@ -115,8 +124,8 @@ export class TeacherPortalScreen {
     const backBtn = container.querySelector('#btn-fac-back');
     const brandLink = container.querySelector('#brand-fac-home');
 
-    if (backBtn && this.onNavigate) backBtn.addEventListener('click', () => this.onNavigate('gateway'));
+    if (backBtn) backBtn.addEventListener('click', () => this.handleBack());
     if (signoutBtn && this.onSignOut) signoutBtn.addEventListener('click', this.onSignOut);
-    if (brandLink && this.onNavigate) brandLink.addEventListener('click', () => this.onNavigate('gateway'));
+    if (brandLink) brandLink.addEventListener('click', () => this.handleBack());
   }
 }

@@ -4,9 +4,18 @@
  */
 
 export class AssignmentScreen {
-  constructor({ assignments = [], onNavigate }) {
+  constructor({ assignments = [], onNavigate, onBack }) {
     this.assignments = assignments;
     this.onNavigate = onNavigate;
+    this.onBack = onBack;
+  }
+
+  handleBack() {
+    if (this.onBack) {
+      this.onBack();
+    } else if (this.onNavigate) {
+      this.onNavigate('home');
+    }
   }
 
   render() {
@@ -22,7 +31,7 @@ export class AssignmentScreen {
               <span>SRMUS Live</span>
             </div>
           </div>
-          <button class="btn-back" id="btn-asg-home" title="Back to Home">
+          <button class="btn-back" id="btn-asg-home" title="Go Back">
             <i data-lucide="arrow-left" style="width: 13px; height: 13px;"></i>
             <span>Back</span>
           </button>
@@ -57,7 +66,7 @@ export class AssignmentScreen {
     const homeBtn = container.querySelector('#btn-asg-home');
     const brandLink = container.querySelector('#brand-asg-home');
 
-    if (homeBtn && this.onNavigate) homeBtn.addEventListener('click', () => this.onNavigate('home'));
-    if (brandLink && this.onNavigate) brandLink.addEventListener('click', () => this.onNavigate('home'));
+    if (homeBtn) homeBtn.addEventListener('click', () => this.handleBack());
+    if (brandLink) brandLink.addEventListener('click', () => this.handleBack());
   }
 }

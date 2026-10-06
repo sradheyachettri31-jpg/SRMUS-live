@@ -97,7 +97,7 @@ export class HomeScreen {
             </div>
 
             <div class="portal-nav-actions">
-              <button class="btn-back" id="btn-home-back" title="Back to Gateway">
+              <button class="btn-back" id="btn-home-back" title="Go Back">
                 <i data-lucide="arrow-left" style="width: 13px; height: 13px;"></i>
                 <span>Back</span>
               </button>

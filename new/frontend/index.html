@@ -47,6 +47,27 @@
         </div>
       </div>
 
+      <!-- Persistent App Bar: Sidebar Toggle, Back Button & Active Module Title -->
+      <div class="app-topbar" id="app-topbar">
+        <button class="topbar-btn topbar-menu-btn" id="btn-sidebar-open" type="button" title="Open modules sidebar"
+          aria-label="Open modules sidebar">
+          <i data-lucide="menu" style="width: 17px; height: 17px;"></i>
+        </button>
+
+        <button class="topbar-btn topbar-back-btn" id="back-btn" type="button" title="Go back to previous screen"
+          aria-label="Go back">
+          <i data-lucide="arrow-left" style="width: 14px; height: 14px;"></i>
+          <span>Back</span>
+        </button>
+
+        <span class="topbar-module-title" id="app-module-title">SRMUS Live</span>
+
+        <span class="topbar-live-pill" title="Live university feed">
+          <span class="topbar-live-dot"></span>
+          <span>Live</span>
+        </span>
+      </div>
+
       <!-- Scrollable Main Screen Root with Vertical Sliding Animation -->
       <div class="app-screen-container" id="app-screen-root">
         <div class="loading-state">
@@ -56,6 +77,31 @@
 
       <!-- Phone Bottom Home Gesture Bar -->
       <div class="phone-home-indicator-bar"></div>
+
+      <!-- Sidebar Backdrop Overlay -->
+      <div class="sidebar-backdrop" id="sidebar-backdrop"></div>
+
+      <!-- Module Sidebar: organised navigation for every module -->
+      <aside class="app-sidebar" id="app-sidebar" aria-label="Modules sidebar">
+        <div class="sidebar-header">
+          <div class="sidebar-brand">
+            <div class="brand-crest-box">
+              <img src="assets/images/srm_logo.jpg" alt="SRM University Sikkim" class="brand-crest-img"
+                onerror="this.onerror=null;this.src='https://www.iaspaper.net/wp-content/uploads/2018/10/SRM-University-Sikkim-150x150.jpg'" />
+            </div>
+            <div class="sidebar-brand-text">
+              <span class="sidebar-brand-title">SRMUS Live</span>
+              <span class="sidebar-brand-sub">SRM University Sikkim</span>
+            </div>
+          </div>
+          <button class="sidebar-close-btn" id="btn-sidebar-close" type="button" title="Close menu" aria-label="Close menu">
+            <i data-lucide="x" style="width: 15px; height: 15px;"></i>
+          </button>
+        </div>
+
+        <div class="sidebar-scroll" id="sidebar-nav-list"></div>
+        <div class="sidebar-footer" id="sidebar-footer"></div>
+      </aside>
     </div>
   </main>
 
