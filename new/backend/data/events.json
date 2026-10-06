@@ -1,0 +1,64 @@
+{
+  "events": [
+    {
+      "id": "evt_2026_101",
+      "title": "SRM National AI Hackathon 2026",
+      "description": "A 36-hour non-stop buildathon bringing together over 1,200 developers, designers, and innovators across India to solve real-world industry challenges using Generative AI and Edge Computing.",
+      "date": "2026-04-18",
+      "date_formatted": "Apr 18 - 20, 2026",
+      "time": "09:00 AM IST",
+      "location": "Tech Park Main Atrium, KTR Campus",
+      "category": "Hackathon",
+      "attendees_count": 840,
+      "max_capacity": 1000,
+      "is_registered": true,
+      "tag": "Featured",
+      "banner_theme": "maroon"
+    },
+    {
+      "id": "evt_2026_102",
+      "title": "Distinguished Guest Lecture: Quantum Machine Learning",
+      "description": "Special keynote lecture by Dr. S. Ramanathan, Principal Research Scientist at MIT Quantum Labs, on breakthroughs in Quantum Neural Networks and fault-tolerant quantum algorithms.",
+      "date": "2026-04-22",
+      "date_formatted": "Apr 22, 2026",
+      "time": "02:30 PM - 04:30 PM",
+      "location": "Dr. T.P. Ganesan Mini Auditorium 1",
+      "category": "Workshop",
+      "attendees_count": 310,
+      "max_capacity": 350,
+      "is_registered": false,
+      "tag": "Academic",
+      "banner_theme": "navy"
+    },
+    {
+      "id": "evt_2026_103",
+      "title": "Aaruush 2026: Techno-Management Expo & RoboWars",
+      "description": "The annual national techno-management fest featuring autonomous robot combat, drone racing, startup pitch arena, and keynote masterclasses from Silicon Valley engineers.",
+      "date": "2026-05-05",
+      "date_formatted": "May 05 - 08, 2026",
+      "time": "10:00 AM Daily",
+      "location": "University Grounds & UB Complex",
+      "category": "Tech Fest",
+      "attendees_count": 4200,
+      "max_capacity": 5000,
+      "is_registered": false,
+      "tag": "Campus Fest",
+      "banner_theme": "gold"
+    },
+    {
+      "id": "evt_2026_104",
+      "title": "All-India Inter-University Badminton Championship",
+      "description": "Cheer for Team SRM as they compete against top universities from South Zone. Men's and Women's singles and doubles quarterfinals and finals.",
+      "date": "2026-05-12",
+      "date_formatted": "May 12, 2026",
+      "time": "04:00 PM IST",
+      "location": "Indoor Stadium, Sports Complex",
+      "category": "Sports",
+      "attendees_count": 520,
+      "max_capacity": 800,
+      "is_registered": false,
+      "tag": "Sports",
+      "banner_theme": "emerald"
+    }
+  ]
+}

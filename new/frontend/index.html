@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>SRMUS Live | University Portal</title>
+
+  <!-- SRM University Sikkim Favicon -->
+  <link rel="icon" type="image/jpeg" href="assets/images/srm_logo.jpg" />
+
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/components.css" />
+</head>
+
+<body>
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="app-toast-container"></div>
+
+  <!-- App Main Wrapper -->
+  <main class="app-main-wrapper">
+    <!-- Phone Frame Container -->
+    <div class="phone-device-frame" id="app-phone-frame">
+      <!-- Phone Top Speaker & Camera Notch -->
+      <div class="phone-notch-area">
+        <div class="notch-speaker-bar"></div>
+        <div class="notch-camera-dot"></div>
+      </div>
+
+      <!-- Live Mobile Status Bar -->
+      <div class="phone-status-bar">
+        <span id="phone-clock-display">09:41</span>
+        <div class="status-bar-icons">
+          <i data-lucide="signal" style="width: 13px; height: 13px;"></i>
+          <i data-lucide="wifi" style="width: 13px; height: 13px;"></i>
+          <i data-lucide="battery" style="width: 15px; height: 15px;"></i>
+        </div>
+      </div>
+
+      <!-- Scrollable Main Screen Root with Vertical Sliding Animation -->
+      <div class="app-screen-container" id="app-screen-root">
+        <div class="loading-state">
+          <p>Loading SRMUS Live...</p>
+        </div>
+      </div>
+
+      <!-- Phone Bottom Home Gesture Bar -->
+      <div class="phone-home-indicator-bar"></div>
+    </div>
+  </main>
+
+  <!-- Application Entrypoint (ES Module) -->
+  <script type="module" src="js/app.js"></script>
+</body>
+
+</html>

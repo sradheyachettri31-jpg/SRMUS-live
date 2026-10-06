@@ -1,0 +1,59 @@
+{
+  "notices": [
+    {
+      "id": "not_2026_001",
+      "title": "End Semester Theory Examination Schedule - May/June 2026",
+      "description": "The tentative timetable for the 6th semester end examinations has been published on the student portal. Students are advised to verify their subject codes and report any scheduling clashes to the COE office before April 15th.",
+      "category": "Examination",
+      "department": "Controller of Examinations",
+      "created_at": "2026-04-02T09:30:00Z",
+      "priority": "High",
+      "attachment_url": "#",
+      "is_read": false
+    },
+    {
+      "id": "not_2026_002",
+      "title": "Campus Placement Drive: Google Cloud & Microsoft AI Hiring",
+      "description": "Registration is open for the upcoming joint campus recruitment drive for 2026 graduating batch. Eligible branches: CSE, IT, ECE with CGPA 8.0 and above. Mandatory pre-placement talk on April 10th at Dr. T.P. Ganesan Auditorium.",
+      "category": "Placement",
+      "department": "Career Centre & Corporate Relations",
+      "created_at": "2026-04-01T14:15:00Z",
+      "priority": "High",
+      "attachment_url": "#",
+      "is_read": false
+    },
+    {
+      "id": "not_2026_003",
+      "title": "Milan 2026 - Annual National Cultural Festival Volunteer Registration",
+      "description": "Join the core student organizing team for Milan 2026! Applications are invited for Hospitality, Public Relations, Stage Management, and Sponsorship committees. Submit nominations via your faculty coordinator.",
+      "category": "Campus Life",
+      "department": "Directorate of Student Affairs",
+      "created_at": "2026-03-29T11:00:00Z",
+      "priority": "Normal",
+      "attachment_url": "#",
+      "is_read": true
+    },
+    {
+      "id": "not_2026_004",
+      "title": "Central Library 24x7 Reading Hall Access During Exam Period",
+      "description": "The Central University Library reading halls on the 2nd and 3rd floors will remain open 24x7 with high-speed Wi-Fi and power points starting from next Monday until the conclusion of final semester exams.",
+      "category": "Academic",
+      "department": "University Library Services",
+      "created_at": "2026-03-27T16:45:00Z",
+      "priority": "Normal",
+      "attachment_url": "#",
+      "is_read": true
+    },
+    {
+      "id": "not_2026_005",
+      "title": "Inter-Collegiate Hackathon: SRM TechNexus 2026 Shortlist",
+      "description": "Shortlisted teams for the 36-hour hackathon finals have been announced. Check team confirmation emails and collect hackathon badges from Tech Park 7th Floor Lab.",
+      "category": "Academic",
+      "department": "School of Computing",
+      "created_at": "2026-03-25T10:20:00Z",
+      "priority": "Normal",
+      "attachment_url": "#",
+      "is_read": true
+    }
+  ]
+}

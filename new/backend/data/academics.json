@@ -1,0 +1,103 @@
+{
+  "academics": {
+    "overall_attendance": 88.5,
+    "required_attendance": 75.0,
+    "status": "Eligible",
+    "total_classes": 320,
+    "attended_classes": 283,
+    "subjects": [
+      {
+        "code": "21CSC302J",
+        "name": "Cloud Computing & DevOps",
+        "faculty": "Dr. S. Karthikeyan",
+        "attended": 42,
+        "total": 46,
+        "percentage": 91.3,
+        "status": "Safe"
+      },
+      {
+        "code": "21CSC304J",
+        "name": "Artificial Intelligence & Neural Networks",
+        "faculty": "Prof. Ananya Sen",
+        "attended": 45,
+        "total": 48,
+        "percentage": 93.7,
+        "status": "Safe"
+      },
+      {
+        "code": "21CSC305J",
+        "name": "Compiler Design",
+        "faculty": "Dr. R. Venkatesh",
+        "attended": 36,
+        "total": 44,
+        "percentage": 81.8,
+        "status": "Warning"
+      },
+      {
+        "code": "21CSC308J",
+        "name": "Distributed Systems",
+        "faculty": "Dr. Priya Murugan",
+        "attended": 40,
+        "total": 45,
+        "percentage": 88.9,
+        "status": "Safe"
+      },
+      {
+        "code": "21LEM101T",
+        "name": "Professional Ethics & Leadership",
+        "faculty": "Prof. T. G. Balaji",
+        "attended": 28,
+        "total": 30,
+        "percentage": 93.3,
+        "status": "Safe"
+      }
+    ],
+    "today_timetable": [
+      {
+        "period": "1",
+        "time": "08:45 AM - 09:35 AM",
+        "subject": "Cloud Computing & DevOps",
+        "code": "21CSC302J",
+        "room": "TP-604",
+        "type": "Lecture",
+        "status": "Completed"
+      },
+      {
+        "period": "2",
+        "time": "09:40 AM - 10:30 AM",
+        "subject": "Compiler Design",
+        "code": "21CSC305J",
+        "room": "TP-604",
+        "type": "Lecture",
+        "status": "Completed"
+      },
+      {
+        "period": "3",
+        "time": "10:45 AM - 11:35 AM",
+        "subject": "AI & Neural Networks Lab",
+        "code": "21CSC304J",
+        "room": "Lab 7, UB 8th Floor",
+        "type": "Practical",
+        "status": "Upcoming"
+      },
+      {
+        "period": "4",
+        "time": "11:40 AM - 12:30 PM",
+        "subject": "AI & Neural Networks Lab",
+        "code": "21CSC304J",
+        "room": "Lab 7, UB 8th Floor",
+        "type": "Practical",
+        "status": "Upcoming"
+      },
+      {
+        "period": "5",
+        "time": "01:30 PM - 03:10 PM",
+        "subject": "Distributed Systems Seminar",
+        "code": "21CSC308J",
+        "room": "Seminar Hall 2",
+        "type": "Seminar",
+        "status": "Upcoming"
+      }
+    ]
+  }
+}

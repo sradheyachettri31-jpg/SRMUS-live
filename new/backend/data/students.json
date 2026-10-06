@@ -1,0 +1,25 @@
+{
+  "student": {
+    "id": "srm_std_2025_089",
+    "name": "ANUP SAPKOTA",
+    "dob": "26/02/2007",
+    "dob_raw": "26022007",
+    "email": "anup.sapkota@srmist.edu.in",
+    "student_id": "RA2511003010089",
+    "course": "BCA",
+    "department": "Department of Computer Applications",
+    "semester": 2,
+    "batch": "2025 - 2028",
+    "campus": "SRM University Main Campus, Kattankulathur",
+    "section": "BCA-A",
+    "roll_no": "24",
+    "cgpa": 8.7,
+    "attendance_rate": 85.0,
+    "profile_image": "",
+    "advisor": {
+      "name": "Dr. K. Senthil Kumar",
+      "designation": "Assistant Professor, Dept. of Computer Applications",
+      "email": "senthil.k@srmist.edu.in"
+    }
+  }
+}

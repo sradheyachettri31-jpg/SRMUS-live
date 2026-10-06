@@ -1,0 +1,22 @@
+{
+  "announcements": [
+    {
+      "id": "ann_2026_01",
+      "title": "Campus Shuttle Route #14 Diversion",
+      "message": "Due to ongoing flyover infrastructure work near Gate 3, Route 14 will operate via Potheri East Gate until Friday.",
+      "created_at": "2026-04-03T08:00:00Z",
+      "priority": "Urgent",
+      "type": "transport",
+      "active": true
+    },
+    {
+      "id": "ann_2026_02",
+      "title": "Semester Fee Payment Window Extended",
+      "message": "The finance office has extended the fee payment portal deadline to April 15, 2026 without late fee penalties.",
+      "created_at": "2026-04-01T10:00:00Z",
+      "priority": "Important",
+      "type": "finance",
+      "active": true
+    }
+  ]
+}
