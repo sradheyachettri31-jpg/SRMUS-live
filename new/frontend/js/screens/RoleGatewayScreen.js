@@ -7,6 +7,143 @@
 
 import { authService } from '../services/authService.js';
 
+/* ---------------------------------------------------------------------------
+ * TEACHERS INFORMATION (Read-only faculty directory)
+ * Rendered inside the existing "Other" module (University Services sheet).
+ * School of Information Technology - SRM University Sikkim.
+ * This list is purely presentational: students can only view it.
+ * ------------------------------------------------------------------------- */
+const FACULTY_DIRECTORY = [
+  {
+    name: 'Prof. (Dr.) Om Prakash Sharma',
+    qualification: '',
+    specialization: 'Computer Vision, Information Security',
+    designation: 'Head of the Department'
+  },
+  {
+    name: 'Dr. Hemamalini S',
+    qualification: 'M.Tech., Ph.D.',
+    specialization: 'AI & ML, Image Processing',
+    designation: 'Assistant Professor'
+  },
+  {
+    name: 'Ms. Sabna Sharma',
+    qualification: 'M.Tech., (Ph.D.)',
+    specialization: 'Image Processing',
+    designation: 'Assistant Professor'
+  },
+  {
+    name: 'Mr. Sivaramkumar P.',
+    qualification: 'MS from Central Queensland University, Sydney, (Ph.D.)',
+    specialization: 'Cloud Computing',
+    designation: 'Assistant Professor'
+  },
+  {
+    name: 'Ms. Priyadarshini Pradhan',
+    qualification: 'M.Sc. CS, (Ph.D.)',
+    specialization: 'Artificial Intelligence',
+    designation: 'Assistant Professor'
+  },
+  {
+    name: 'Mr. Sancha Bir Gurung',
+    qualification: 'M.Tech.',
+    specialization: 'AI & ML, Natural Language Processing',
+    designation: 'Assistant Professor'
+  },
+  {
+    name: 'Mr. Abhimanyu Sharma',
+    qualification: 'M.Tech., (Ph.D.)',
+    specialization: 'IoT, UI/UX',
+    designation: 'Assistant Professor'
+  },
+  {
+    name: 'Ms. Sneha Pradhan',
+    qualification: 'M.Tech.',
+    specialization: 'Computer Networks, Cloud Computing',
+    designation: 'Assistant Professor'
+  },
+  {
+    name: 'Mr. Samir Limboo',
+    qualification: 'M.Tech.',
+    specialization: 'IoT & ML, TOC',
+    designation: 'Lecturer'
+  }
+];
+
+/** Derive a short monogram (e.g. "Prof. (Dr.) Om Prakash Sharma" -> "OS"). */
+const getFacultyInitials = (name = '') => {
+  const cleaned = name
+    .replace(/\(Dr\.\)/g, ' ')
+    .replace(/\b(Prof|Dr|Mr|Ms|Mrs)\.?\b/g, ' ')
+    .replace(/[^A-Za-z ]/g, ' ')
+    .trim();
+
+  const parts = cleaned.split(/\s+/).filter(Boolean);
+  if (!parts.length) return 'NA';
+
+  const last = parts.length > 1 ? parts[parts.length - 1] : '';
+  return (parts[0][0] + (last[0] || '')).toUpperCase();
+};
+
+/** Colour-coded designation pill (HOD / Teaching Staff / Lecturer). */
+const getFacultyBadgeClass = (designation = '') => {
+  if (designation === 'Head of the Department') return 'faculty-designation-hod';
+  if (designation === 'Lecturer') return 'faculty-designation-lecturer';
+  return 'faculty-designation-staff';
+};
+
+const renderFacultyCard = (faculty) => {
+  const isHod = faculty.designation === 'Head of the Department';
+
+  return `
+    <article class="faculty-card${isHod ? ' faculty-card-hod' : ''}" aria-label="${faculty.name}, ${faculty.designation}">
+      <div class="faculty-avatar" aria-hidden="true">${getFacultyInitials(faculty.name)}</div>
+      <div class="faculty-card-main">
+        <h5 class="faculty-name">${faculty.name}</h5>
+        <span class="faculty-designation ${getFacultyBadgeClass(faculty.designation)}">${faculty.designation}</span>
+        <dl class="faculty-meta">
+          <div class="faculty-meta-row">
+            <dt class="faculty-meta-label">Qualification</dt>
+            <dd class="faculty-meta-value">${faculty.qualification || '&mdash;'}</dd>
+          </div>
+          <div class="faculty-meta-row">
+            <dt class="faculty-meta-label">Specialization</dt>
+            <dd class="faculty-meta-value">${faculty.specialization}</dd>
+          </div>
+        </dl>
+      </div>
+    </article>
+  `;
+};
+
+/** Full read-only "Teachers Information" section markup for the Other module. */
+const renderTeachersInformation = () => `
+  <section class="faculty-info-block" aria-label="Teachers Information, view only">
+    <div class="faculty-info-head">
+      <div class="other-tile-icon faculty-info-icon">
+        <i data-lucide="users" style="width: 16px; height: 16px; color: #0284c7;"></i>
+      </div>
+      <div class="faculty-info-heading">
+        <h4 class="faculty-info-title">Teachers Information</h4>
+        <p class="faculty-info-sub">Faculty Information &ndash; School of Information Technology, SRM University Sikkim</p>
+      </div>
+      <span class="faculty-readonly-pill" title="Students have read-only access">
+        <i data-lucide="eye" style="width: 10px; height: 10px;"></i>
+        <span>View Only</span>
+      </span>
+    </div>
+
+    <div class="faculty-list">
+      ${FACULTY_DIRECTORY.map(renderFacultyCard).join('')}
+    </div>
+
+    <p class="faculty-footnote">
+      <i data-lucide="shield-check" style="width: 12px; height: 12px; flex-shrink: 0; margin-top: 1px;"></i>
+      <span>Read-only directory for students &amp; visitors. Please contact the Department Office for any corrections.</span>
+    </p>
+  </section>
+`;
+
 export class RoleGatewayScreen {
   constructor({ onSelectRole, onNavigate }) {
     this.onSelectRole = onSelectRole;
@@ -150,7 +287,7 @@ export class RoleGatewayScreen {
 
         <!-- OTHER / GUEST PORTAL MODAL SHEET -->
         <div id="modal-other-services" class="modal-other-backdrop" style="display: none;">
-          <div class="modal-other-sheet animate-slide-up">
+          <div class="modal-other-sheet sheet-scrollable animate-slide-up">
             <div class="modal-sheet-handle"></div>
             
             <div class="modal-other-header">
@@ -223,6 +360,9 @@ export class RoleGatewayScreen {
                   <span>Public Notes</span>
                 </button>
               </div>
+
+              <!-- TEACHERS INFORMATION (READ-ONLY FACULTY DIRECTORY) -->
+              ${renderTeachersInformation()}
             </div>
           </div>
         </div>

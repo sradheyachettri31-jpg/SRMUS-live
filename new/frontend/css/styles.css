@@ -2033,6 +2033,253 @@ body {
   color: var(--srm-muted);
 }
 
+/* ==========================================================================
+   Scrollable Sheet Variant (needed for the long Teachers Information list)
+   ========================================================================== */
+.modal-other-sheet.sheet-scrollable {
+  display: flex;
+  flex-direction: column;
+  max-height: 92%;
+}
+
+.sheet-scrollable .modal-sheet-handle,
+.sheet-scrollable .modal-other-header {
+  flex-shrink: 0;
+}
+
+.sheet-scrollable .modal-other-body {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  padding-right: 2px;
+}
+
+.sheet-scrollable .modal-other-body::-webkit-scrollbar {
+  width: 4px;
+}
+
+.sheet-scrollable .modal-other-body::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.35);
+  border-radius: var(--radius-full);
+}
+
+/* ==========================================================================
+   TEACHERS INFORMATION - View-only faculty directory inside the "Other" module
+   ========================================================================== */
+.faculty-info-block {
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px dashed var(--border-light);
+}
+
+.faculty-info-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.faculty-info-icon {
+  width: 34px;
+  height: 34px;
+}
+
+.faculty-info-heading {
+  flex: 1;
+  min-width: 0;
+}
+
+.faculty-info-title {
+  font-size: 13.5px;
+  font-weight: 800;
+  letter-spacing: -0.2px;
+  color: var(--srm-navy);
+  line-height: 1.3;
+}
+
+.faculty-info-sub {
+  font-size: 9.5px;
+  font-weight: 600;
+  line-height: 1.45;
+  color: var(--srm-muted);
+  margin-top: 2px;
+}
+
+.faculty-readonly-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+  padding: 3px 8px;
+  font-size: 8.5px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: #047857;
+  background: #ecfdf5;
+  border: 1px solid #a7f3d0;
+  border-radius: var(--radius-full);
+  white-space: nowrap;
+}
+
+.faculty-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.faculty-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 11px;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-light);
+  border-left: 3px solid var(--theme-blue-accent);
+  border-radius: var(--radius-sm);
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.03);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.faculty-card:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.07);
+}
+
+.faculty-card-hod {
+  background: var(--srm-maroon-soft);
+  border-color: var(--srm-maroon-border);
+  border-left-color: var(--srm-maroon);
+}
+
+.faculty-avatar {
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.3px;
+  color: #ffffff;
+  background: linear-gradient(135deg, var(--theme-blue-accent) 0%, #0369a1 100%);
+  box-shadow: 0 3px 8px rgba(2, 132, 199, 0.24);
+}
+
+.faculty-card-hod .faculty-avatar {
+  background: linear-gradient(135deg, var(--srm-maroon) 0%, var(--srm-maroon-light) 100%);
+  box-shadow: 0 3px 8px rgba(138, 21, 56, 0.26);
+}
+
+.faculty-card-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.faculty-name {
+  font-size: 12.5px;
+  font-weight: 800;
+  line-height: 1.35;
+  color: var(--srm-navy);
+}
+
+.faculty-designation {
+  display: inline-block;
+  margin-top: 5px;
+  padding: 2.5px 8px;
+  font-size: 8.5px;
+  font-weight: 800;
+  letter-spacing: 0.45px;
+  text-transform: uppercase;
+  border-radius: var(--radius-full);
+  white-space: nowrap;
+}
+
+.faculty-designation-hod {
+  background: var(--srm-maroon);
+  color: #ffffff;
+}
+
+.faculty-designation-staff {
+  background: var(--theme-blue-soft);
+  color: var(--theme-blue-accent);
+  border: 1px solid var(--theme-blue-border);
+}
+
+.faculty-designation-lecturer {
+  background: #e2e8f0;
+  color: #334155;
+  border: 1px solid #cbd5e1;
+}
+
+.faculty-meta {
+  display: grid;
+  gap: 5px;
+  margin-top: 8px;
+  padding-top: 7px;
+  border-top: 1px dashed var(--border-light);
+}
+
+.faculty-meta-row {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.faculty-meta-label {
+  flex-shrink: 0;
+  width: 76px;
+  font-size: 8.5px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--srm-light-muted);
+}
+
+.faculty-meta-value {
+  flex: 1;
+  min-width: 0;
+  font-size: 10.5px;
+  font-weight: 600;
+  line-height: 1.45;
+  color: var(--srm-slate);
+}
+
+.faculty-footnote {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  margin-top: 10px;
+  font-size: 9.5px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--srm-light-muted);
+}
+
+/* Teacher directory - small phone responsiveness */
+@media (max-width: 380px) {
+  .faculty-info-sub {
+    font-size: 9px;
+  }
+  .faculty-card {
+    gap: 8px;
+    padding: 9px;
+  }
+  .faculty-avatar {
+    width: 30px;
+    height: 30px;
+    font-size: 11px;
+    border-radius: 9px;
+  }
+  .faculty-meta-label {
+    width: 68px;
+  }
+}
+
 /* Mobile responsive */
 @media (max-width: 480px) {
   body {
